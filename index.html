@@ -17,7 +17,7 @@
         }
 
         body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            font-family: "Segoe UI", "Microsoft YaHei UI", "PingFang SC", Tahoma, Geneva, Verdana, sans-serif;
             color: var(--brand-text);
             background:
                 radial-gradient(circle at top right, rgba(13, 110, 253, 0.12), transparent 25%),
@@ -151,6 +151,26 @@
             margin-top: 0.15rem;
         }
 
+        .language-switch {
+            display: inline-flex;
+            gap: 0.4rem;
+            padding: 0.35rem;
+            border-radius: 999px;
+            background: rgba(13, 110, 253, 0.08);
+        }
+
+        .language-switch .btn {
+            min-width: 3.25rem;
+            border-radius: 999px;
+            border: 0;
+            font-weight: 700;
+        }
+
+        .language-switch .btn.active {
+            background: var(--brand-blue);
+            color: white;
+        }
+
         @media (max-width: 991.98px) {
             .hero {
                 padding-top: 5rem;
@@ -158,7 +178,7 @@
         }
     </style>
 </head>
-<body>
+<body data-lang="en">
     <nav class="navbar navbar-expand-lg sticky-top border-bottom border-primary-subtle">
         <div class="container">
             <a class="navbar-brand fw-bold text-primary" href="#home">Syed Aircond Solutions</a>
@@ -167,10 +187,17 @@
             </button>
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Tentang / About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Hubungi / Contact</a></li>
-                    <li class="nav-item"><a class="btn btn-primary rounded-pill px-4" href="https://wa.me/60172330725" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services" data-i18n="navServices">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" data-i18n="navAbout">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="navContact">Contact</a></li>
+                    <li class="nav-item">
+                        <div class="language-switch">
+                            <button class="btn btn-sm btn-light active" type="button" data-lang-choice="bm">BM</button>
+                            <button class="btn btn-sm btn-light" type="button" data-lang-choice="en">EN</button>
+                            <button class="btn btn-sm btn-light" type="button" data-lang-choice="cn">CN</button>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="btn btn-primary rounded-pill px-4" href="https://wa.me/60172330725" target="_blank" rel="noopener noreferrer" data-i18n="navWhatsApp">WhatsApp</a></li>
                 </ul>
             </div>
         </div>
@@ -180,18 +207,18 @@
         <div class="container position-relative">
             <div class="row align-items-center g-4">
                 <div class="col-lg-7">
-                    <span class="hero-badge mb-3"><i class="bi bi-snow2"></i> Aircond Service in Kuala Lumpur</span>
+                    <span class="hero-badge mb-3"><i class="bi bi-snow2"></i> <span data-i18n="heroBadge">Aircond Service in Kuala Lumpur</span></span>
                     <h1 class="headline mb-3">Syed Aircond Solutions</h1>
-                    <p class="lead fs-5 mb-4">Servis aircond yang cepat, kemas dan boleh dipercayai. Fast, clean, and dependable aircond service for homes, offices, and shops.</p>
+                    <p class="lead fs-5 mb-4" data-i18n="heroLead">Fast, clean, and dependable aircond service for homes, offices, and shops.</p>
                     <div class="d-flex flex-wrap gap-3 mb-4">
-                        <a class="btn btn-primary btn-lg rounded-pill px-4" href="https://wa.me/60172330725" target="_blank" rel="noopener noreferrer">WhatsApp Sekarang / Chat Now</a>
-                        <a class="btn btn-outline-primary btn-lg rounded-pill px-4" href="tel:0172330725">Call 0172330725</a>
+                        <a class="btn btn-primary btn-lg rounded-pill px-4" href="https://wa.me/60172330725" target="_blank" rel="noopener noreferrer" data-i18n="heroPrimaryCta">Chat on WhatsApp</a>
+                        <a class="btn btn-outline-primary btn-lg rounded-pill px-4" href="tel:0172330725" data-i18n="heroSecondaryCta">Call 0172330725</a>
                     </div>
                     <ul class="feature-list list-unstyled mb-0">
-                        <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Servis aircond / Aircond servicing</li>
-                        <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Pemasangan / Installation</li>
-                        <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Baiki kerosakan / Repair</li>
-                        <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Pendawaian / Wiring</li>
+                        <li><i class="bi bi-check-circle-fill text-primary me-2"></i><span data-i18n="feature1">Aircond servicing</span></li>
+                        <li><i class="bi bi-check-circle-fill text-primary me-2"></i><span data-i18n="feature2">Installation</span></li>
+                        <li><i class="bi bi-check-circle-fill text-primary me-2"></i><span data-i18n="feature3">Repair</span></li>
+                        <li><i class="bi bi-check-circle-fill text-primary me-2"></i><span data-i18n="feature4">Wiring</span></li>
                     </ul>
                 </div>
                 <div class="col-lg-5">
@@ -200,30 +227,30 @@
                             <div class="col-6">
                                 <div class="stat-box h-100">
                                     <div class="fs-2 fw-bold text-primary">4</div>
-                                    <div class="small text-secondary">Core Services</div>
+                                    <div class="small text-secondary" data-i18n="statServices">Core Services</div>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="stat-box h-100">
                                     <div class="fs-2 fw-bold text-primary">KL</div>
-                                    <div class="small text-secondary">Based in Bandar Sri Permaisuri</div>
+                                    <div class="small text-secondary" data-i18n="statLocation">Based in Bandar Sri Permaisuri</div>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="p-4 rounded-4" style="background: var(--brand-ice);">
-                                    <h2 class="h4 mb-3">Cepat respon, mudah hubungi</h2>
-                                    <p class="mb-3 text-secondary">Hubungi kami untuk servis berkala, pemasangan unit baru, repair masalah aircond, dan kerja wiring berkaitan.</p>
+                                    <h2 class="h4 mb-3" data-i18n="heroCardTitle">Quick response, easy to contact</h2>
+                                    <p class="mb-3 text-secondary" data-i18n="heroCardText">Contact us for regular servicing, new unit installation, repair work, and related wiring jobs.</p>
                                     <div class="info-line mb-2">
                                         <i class="bi bi-telephone-fill"></i>
                                         <div>
-                                            <div class="fw-semibold">Phone / WhatsApp</div>
+                                            <div class="fw-semibold" data-i18n="phoneWhatsapp">Phone / WhatsApp</div>
                                             <a class="text-decoration-none" href="tel:0172330725">0172330725</a>
                                         </div>
                                     </div>
                                     <div class="info-line mb-0">
                                         <i class="bi bi-geo-alt-fill"></i>
                                         <div>
-                                            <div class="fw-semibold">Address</div>
+                                            <div class="fw-semibold" data-i18n="addressLabel">Address</div>
                                             <div>9-2, Jalan Dwitasik 2, Dataran Dwitasik, 55100 Bandar Sri Permaisuri, Kuala Lumpur</div>
                                         </div>
                                     </div>
@@ -240,37 +267,37 @@
         <section class="section-wrap" id="services">
             <div class="container">
                 <div class="text-center mx-auto mb-5" style="max-width: 760px;">
-                    <span class="section-badge mb-3"><i class="bi bi-tools"></i> Our Services</span>
-                    <h2 class="display-6 fw-bold">Servis lengkap untuk keperluan aircond anda</h2>
-                    <p class="lead">Dari servis biasa hingga pemasangan dan repair, kami sediakan bantuan yang praktikal untuk rumah dan premis perniagaan.</p>
+                    <span class="section-badge mb-3"><i class="bi bi-tools"></i> <span data-i18n="servicesBadge">Our Services</span></span>
+                    <h2 class="display-6 fw-bold" data-i18n="servicesTitle">Complete aircond solutions for your needs</h2>
+                    <p class="lead" data-i18n="servicesLead">From routine servicing to installation and repair, we provide practical support for homes and business premises.</p>
                 </div>
                 <div class="row g-4">
                     <div class="col-md-6 col-xl-3">
                         <div class="service-card card h-100 p-4">
                             <div class="service-icon mb-3"><i class="bi bi-wind"></i></div>
-                            <h3 class="h4">Aircond Service</h3>
-                            <p class="mb-0 text-secondary">Servis berkala untuk kekalkan prestasi penyejukan, kebersihan, dan kecekapan unit.</p>
+                            <h3 class="h4" data-i18n="service1Title">Aircond Service</h3>
+                            <p class="mb-0 text-secondary" data-i18n="service1Text">Regular servicing to maintain cooling performance, cleanliness, and unit efficiency.</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-3">
                         <div class="service-card card h-100 p-4">
                             <div class="service-icon mb-3"><i class="bi bi-building-add"></i></div>
-                            <h3 class="h4">Installation</h3>
-                            <p class="mb-0 text-secondary">Pemasangan unit aircond baru dengan kerja yang kemas dan susunan yang sesuai.</p>
+                            <h3 class="h4" data-i18n="service2Title">Installation</h3>
+                            <p class="mb-0 text-secondary" data-i18n="service2Text">New aircond unit installation with neat work and proper placement.</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-3">
                         <div class="service-card card h-100 p-4">
                             <div class="service-icon mb-3"><i class="bi bi-wrench-adjustable-circle"></i></div>
-                            <h3 class="h4">Repair</h3>
-                            <p class="mb-0 text-secondary">Baiki masalah aircond tidak sejuk, bocor, bising, atau gangguan operasi lain.</p>
+                            <h3 class="h4" data-i18n="service3Title">Repair</h3>
+                            <p class="mb-0 text-secondary" data-i18n="service3Text">Repair aircond issues such as poor cooling, leaks, noise, or other operating problems.</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-3">
                         <div class="service-card card h-100 p-4">
                             <div class="service-icon mb-3"><i class="bi bi-lightning-charge"></i></div>
-                            <h3 class="h4">Wiring</h3>
-                            <p class="mb-0 text-secondary">Kerja wiring berkaitan pemasangan dan pembaikan untuk setup yang lebih selamat.</p>
+                            <h3 class="h4" data-i18n="service4Title">Wiring</h3>
+                            <p class="mb-0 text-secondary" data-i18n="service4Text">Wiring work related to installation and repair for a safer setup.</p>
                         </div>
                     </div>
                 </div>
@@ -282,32 +309,32 @@
                 <div class="row g-4 align-items-stretch">
                     <div class="col-lg-6">
                         <div class="h-100 p-4 p-lg-5 rounded-5 bg-primary text-white shadow-lg">
-                            <span class="section-badge bg-white text-primary mb-3"><i class="bi bi-stars"></i> Kenapa Pilih Kami</span>
-                            <h2 class="display-6 fw-bold mb-3">Practical service, clear communication</h2>
-                            <p class="mb-4">Kami fokus pada kerja yang teratur, penerangan yang mudah difahami, dan servis yang sesuai dengan masalah sebenar pelanggan.</p>
+                            <span class="section-badge bg-white text-primary mb-3"><i class="bi bi-stars"></i> <span data-i18n="aboutBadge">Why Choose Us</span></span>
+                            <h2 class="display-6 fw-bold mb-3" data-i18n="aboutTitle">Practical service, clear communication</h2>
+                            <p class="mb-4" data-i18n="aboutLead">We focus on organized work, easy-to-understand explanations, and service matched to the customer’s actual problem.</p>
                             <div class="row g-3">
                                 <div class="col-sm-6">
                                     <div class="p-3 rounded-4 bg-white bg-opacity-10 h-100">
-                                        <h3 class="h5">BM + EN</h3>
-                                        <p class="mb-0 small">Mudah berurusan dalam Bahasa Melayu dan English.</p>
+                                        <h3 class="h5" data-i18n="aboutCard1Title">BM + EN + CN</h3>
+                                        <p class="mb-0 small" data-i18n="aboutCard1Text">Easy to communicate in Bahasa Melayu, English, and Chinese.</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="p-3 rounded-4 bg-white bg-opacity-10 h-100">
-                                        <h3 class="h5">Fast Response</h3>
-                                        <p class="mb-0 small">WhatsApp dan panggilan terus untuk pertanyaan cepat.</p>
+                                        <h3 class="h5" data-i18n="aboutCard2Title">Fast Response</h3>
+                                        <p class="mb-0 small" data-i18n="aboutCard2Text">WhatsApp and direct calls for faster enquiries.</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="p-3 rounded-4 bg-white bg-opacity-10 h-100">
-                                        <h3 class="h5">Clean Work</h3>
-                                        <p class="mb-0 small">Kerja pemasangan dan servis dengan susunan yang kemas.</p>
+                                        <h3 class="h5" data-i18n="aboutCard3Title">Clean Work</h3>
+                                        <p class="mb-0 small" data-i18n="aboutCard3Text">Neat installation and servicing work.</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="p-3 rounded-4 bg-white bg-opacity-10 h-100">
-                                        <h3 class="h5">Local Coverage</h3>
-                                        <p class="mb-0 small">Berpusat di Bandar Sri Permaisuri, Kuala Lumpur.</p>
+                                        <h3 class="h5" data-i18n="aboutCard4Title">Local Coverage</h3>
+                                        <p class="mb-0 small" data-i18n="aboutCard4Text">Based in Bandar Sri Permaisuri, Kuala Lumpur.</p>
                                     </div>
                                 </div>
                             </div>
@@ -315,16 +342,16 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="h-100 p-4 p-lg-5 rounded-5 bg-white border border-primary-subtle shadow-sm">
-                            <span class="section-badge mb-3"><i class="bi bi-chat-square-text"></i> BM / EN</span>
-                            <h2 class="display-6 fw-bold mb-3">Simple message, faster booking</h2>
-                            <p class="text-secondary mb-4">Anda boleh terus WhatsApp dengan maklumat ringkas seperti lokasi, jenis masalah, atau keperluan pemasangan. We can reply faster when the request is clear.</p>
+                            <span class="section-badge mb-3"><i class="bi bi-chat-square-text"></i> <span data-i18n="messageBadge">BM / EN / CN</span></span>
+                            <h2 class="display-6 fw-bold mb-3" data-i18n="messageTitle">Simple message, faster booking</h2>
+                            <p class="text-secondary mb-4" data-i18n="messageLead">You can WhatsApp us with a short message such as your location, issue, or installation requirement. We can reply faster when the request is clear.</p>
                             <div class="rounded-4 p-4" style="background: var(--brand-ice);">
-                                <p class="fw-semibold mb-2">Example / Contoh mesej:</p>
-                                <p class="mb-0 text-secondary">"Hi, saya di Sri Permaisuri. Aircond tak sejuk dan ada bunyi kuat. Boleh datang check?"</p>
+                                <p class="fw-semibold mb-2" data-i18n="messageExampleLabel">Example message:</p>
+                                <p class="mb-0 text-secondary" data-i18n="messageExampleText">"Hi, I am in Sri Permaisuri. My aircond is not cold and it is making loud noise. Can you come and check?"</p>
                             </div>
                             <div class="mt-4 d-flex flex-wrap gap-3">
-                                <a class="btn btn-primary rounded-pill px-4" href="https://wa.me/60172330725" target="_blank" rel="noopener noreferrer">Open WhatsApp</a>
-                                <a class="btn btn-outline-primary rounded-pill px-4" href="#contact">View Contact Info</a>
+                                <a class="btn btn-primary rounded-pill px-4" href="https://wa.me/60172330725" target="_blank" rel="noopener noreferrer" data-i18n="messagePrimaryCta">Open WhatsApp</a>
+                                <a class="btn btn-outline-primary rounded-pill px-4" href="#contact" data-i18n="messageSecondaryCta">View Contact Info</a>
                             </div>
                         </div>
                     </div>
@@ -337,22 +364,22 @@
                 <div class="contact-card p-4 p-lg-5 rounded-5">
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-7">
-                            <h2 class="display-6 fw-bold mb-3">Hubungi Syed Aircond Solutions</h2>
-                            <p class="mb-0 fs-5">Untuk servis, installation, repair atau wiring, terus hubungi kami melalui telefon atau WhatsApp.</p>
+                            <h2 class="display-6 fw-bold mb-3" data-i18n="contactTitle">Contact Syed Aircond Solutions</h2>
+                            <p class="mb-0 fs-5" data-i18n="contactLead">For servicing, installation, repair, or wiring, contact us directly by phone or WhatsApp.</p>
                         </div>
                         <div class="col-lg-5">
                             <div class="bg-white text-dark rounded-4 p-4 shadow-sm">
                                 <div class="info-line">
                                     <i class="bi bi-telephone-fill text-primary"></i>
                                     <div>
-                                        <div class="fw-semibold">Phone</div>
+                                        <div class="fw-semibold" data-i18n="phoneLabel">Phone</div>
                                         <a class="text-decoration-none text-dark" href="tel:0172330725">0172330725</a>
                                     </div>
                                 </div>
                                 <div class="info-line mb-0">
                                     <i class="bi bi-geo-alt-fill text-primary"></i>
                                     <div>
-                                        <div class="fw-semibold">Address</div>
+                                        <div class="fw-semibold" data-i18n="addressLabel">Address</div>
                                         <div>9-2, Jalan Dwitasik 2, Dataran Dwitasik, 55100 Bandar Sri Permaisuri, Kuala Lumpur</div>
                                     </div>
                                 </div>
@@ -366,15 +393,217 @@
 
     <footer class="py-4 border-top border-primary-subtle bg-white">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
-            <p class="mb-0">&copy; 2026 Syed Aircond Solutions. Aircond service, installation, repair, and wiring.</p>
+            <p class="mb-0" data-i18n="footerText">&copy; 2026 Syed Aircond Solutions. Aircond service, installation, repair, and wiring.</p>
             <a class="text-decoration-none text-primary fw-semibold" href="https://wa.me/60172330725" target="_blank" rel="noopener noreferrer">WhatsApp: 0172330725</a>
         </div>
     </footer>
 
-    <a class="floating-whatsapp" href="https://wa.me/60172330725" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <a class="floating-whatsapp" href="https://wa.me/60172330725" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" data-i18n-aria-label="floatingWhatsappAria">
         <i class="bi bi-whatsapp"></i>
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const translations = {
+            bm: {
+                navServices: "Perkhidmatan",
+                navAbout: "Tentang",
+                navContact: "Hubungi",
+                navWhatsApp: "WhatsApp",
+                heroBadge: "Servis Aircond di Kuala Lumpur",
+                heroLead: "Servis aircond yang cepat, kemas, dan boleh dipercayai untuk rumah, pejabat, dan kedai.",
+                heroPrimaryCta: "WhatsApp Sekarang",
+                heroSecondaryCta: "Hubungi 0172330725",
+                feature1: "Servis aircond",
+                feature2: "Pemasangan",
+                feature3: "Baiki kerosakan",
+                feature4: "Pendawaian",
+                statServices: "Perkhidmatan Utama",
+                statLocation: "Berasaskan di Bandar Sri Permaisuri",
+                heroCardTitle: "Cepat respon, mudah hubungi",
+                heroCardText: "Hubungi kami untuk servis berkala, pemasangan unit baru, kerja repair, dan wiring berkaitan.",
+                phoneWhatsapp: "Telefon / WhatsApp",
+                addressLabel: "Alamat",
+                servicesBadge: "Perkhidmatan Kami",
+                servicesTitle: "Servis lengkap untuk keperluan aircond anda",
+                servicesLead: "Dari servis biasa hingga pemasangan dan repair, kami sediakan bantuan yang praktikal untuk rumah dan premis perniagaan.",
+                service1Title: "Servis Aircond",
+                service1Text: "Servis berkala untuk kekalkan prestasi penyejukan, kebersihan, dan kecekapan unit.",
+                service2Title: "Pemasangan",
+                service2Text: "Pemasangan unit aircond baru dengan kerja yang kemas dan susunan yang sesuai.",
+                service3Title: "Repair",
+                service3Text: "Baiki masalah aircond tidak sejuk, bocor, bising, atau gangguan operasi lain.",
+                service4Title: "Wiring",
+                service4Text: "Kerja wiring berkaitan pemasangan dan pembaikan untuk setup yang lebih selamat.",
+                aboutBadge: "Kenapa Pilih Kami",
+                aboutTitle: "Servis praktikal, komunikasi yang jelas",
+                aboutLead: "Kami fokus pada kerja yang teratur, penerangan yang mudah difahami, dan servis yang sesuai dengan masalah sebenar pelanggan.",
+                aboutCard1Title: "BM + EN + CN",
+                aboutCard1Text: "Mudah berurusan dalam Bahasa Melayu, English, dan Chinese.",
+                aboutCard2Title: "Respon Pantas",
+                aboutCard2Text: "WhatsApp dan panggilan terus untuk pertanyaan cepat.",
+                aboutCard3Title: "Kerja Kemas",
+                aboutCard3Text: "Kerja pemasangan dan servis dengan susunan yang kemas.",
+                aboutCard4Title: "Liputan Tempatan",
+                aboutCard4Text: "Berpusat di Bandar Sri Permaisuri, Kuala Lumpur.",
+                messageBadge: "BM / EN / CN",
+                messageTitle: "Mesej ringkas, tempahan lebih cepat",
+                messageLead: "Anda boleh terus WhatsApp dengan maklumat ringkas seperti lokasi, jenis masalah, atau keperluan pemasangan. Kami boleh balas lebih cepat apabila permintaan jelas.",
+                messageExampleLabel: "Contoh mesej:",
+                messageExampleText: "\"Hi, saya di Sri Permaisuri. Aircond tak sejuk dan ada bunyi kuat. Boleh datang check?\"",
+                messagePrimaryCta: "Buka WhatsApp",
+                messageSecondaryCta: "Lihat Maklumat Hubungan",
+                contactTitle: "Hubungi Syed Aircond Solutions",
+                contactLead: "Untuk servis, pemasangan, repair atau wiring, terus hubungi kami melalui telefon atau WhatsApp.",
+                phoneLabel: "Telefon",
+                footerText: "&copy; 2026 Syed Aircond Solutions. Servis aircond, pemasangan, repair, dan wiring.",
+                floatingWhatsappAria: "Chat di WhatsApp"
+            },
+            en: {
+                navServices: "Services",
+                navAbout: "About",
+                navContact: "Contact",
+                navWhatsApp: "WhatsApp",
+                heroBadge: "Aircond Service in Kuala Lumpur",
+                heroLead: "Fast, clean, and dependable aircond service for homes, offices, and shops.",
+                heroPrimaryCta: "Chat on WhatsApp",
+                heroSecondaryCta: "Call 0172330725",
+                feature1: "Aircond servicing",
+                feature2: "Installation",
+                feature3: "Repair",
+                feature4: "Wiring",
+                statServices: "Core Services",
+                statLocation: "Based in Bandar Sri Permaisuri",
+                heroCardTitle: "Quick response, easy to contact",
+                heroCardText: "Contact us for regular servicing, new unit installation, repair work, and related wiring jobs.",
+                phoneWhatsapp: "Phone / WhatsApp",
+                addressLabel: "Address",
+                servicesBadge: "Our Services",
+                servicesTitle: "Complete aircond solutions for your needs",
+                servicesLead: "From routine servicing to installation and repair, we provide practical support for homes and business premises.",
+                service1Title: "Aircond Service",
+                service1Text: "Regular servicing to maintain cooling performance, cleanliness, and unit efficiency.",
+                service2Title: "Installation",
+                service2Text: "New aircond unit installation with neat work and proper placement.",
+                service3Title: "Repair",
+                service3Text: "Repair aircond issues such as poor cooling, leaks, noise, or other operating problems.",
+                service4Title: "Wiring",
+                service4Text: "Wiring work related to installation and repair for a safer setup.",
+                aboutBadge: "Why Choose Us",
+                aboutTitle: "Practical service, clear communication",
+                aboutLead: "We focus on organized work, easy-to-understand explanations, and service matched to the customer's actual problem.",
+                aboutCard1Title: "BM + EN + CN",
+                aboutCard1Text: "Easy to communicate in Bahasa Melayu, English, and Chinese.",
+                aboutCard2Title: "Fast Response",
+                aboutCard2Text: "WhatsApp and direct calls for faster enquiries.",
+                aboutCard3Title: "Clean Work",
+                aboutCard3Text: "Neat installation and servicing work.",
+                aboutCard4Title: "Local Coverage",
+                aboutCard4Text: "Based in Bandar Sri Permaisuri, Kuala Lumpur.",
+                messageBadge: "BM / EN / CN",
+                messageTitle: "Simple message, faster booking",
+                messageLead: "You can WhatsApp us with a short message such as your location, issue, or installation requirement. We can reply faster when the request is clear.",
+                messageExampleLabel: "Example message:",
+                messageExampleText: "\"Hi, I am in Sri Permaisuri. My aircond is not cold and it is making loud noise. Can you come and check?\"",
+                messagePrimaryCta: "Open WhatsApp",
+                messageSecondaryCta: "View Contact Info",
+                contactTitle: "Contact Syed Aircond Solutions",
+                contactLead: "For servicing, installation, repair, or wiring, contact us directly by phone or WhatsApp.",
+                phoneLabel: "Phone",
+                footerText: "&copy; 2026 Syed Aircond Solutions. Aircond service, installation, repair, and wiring.",
+                floatingWhatsappAria: "Chat on WhatsApp"
+            },
+            cn: {
+                navServices: "服务",
+                navAbout: "关于我们",
+                navContact: "联系我们",
+                navWhatsApp: "WhatsApp",
+                heroBadge: "吉隆坡冷气服务",
+                heroLead: "为住家、办公室和店铺提供快速、整洁、可靠的冷气服务。",
+                heroPrimaryCta: "立即 WhatsApp",
+                heroSecondaryCta: "致电 0172330725",
+                feature1: "冷气保养",
+                feature2: "安装",
+                feature3: "维修",
+                feature4: "电线工程",
+                statServices: "核心服务",
+                statLocation: "位于 Bandar Sri Permaisuri",
+                heroCardTitle: "快速回复，联系方便",
+                heroCardText: "欢迎联系预约定期保养、新机安装、维修服务和相关电线工程。",
+                phoneWhatsapp: "电话 / WhatsApp",
+                addressLabel: "地址",
+                servicesBadge: "我们的服务",
+                servicesTitle: "满足您需求的一站式冷气服务",
+                servicesLead: "从日常保养到安装和维修，我们为住家和商业单位提供实用服务。",
+                service1Title: "冷气保养",
+                service1Text: "定期保养有助于维持制冷效果、清洁度和机器效率。",
+                service2Title: "安装",
+                service2Text: "新冷气安装，施工整洁，位置安排合适。",
+                service3Title: "维修",
+                service3Text: "维修不冷、漏水、噪音大或其他运作问题。",
+                service4Title: "电线工程",
+                service4Text: "提供与安装和维修相关的电线工程，确保系统更安全。",
+                aboutBadge: "为什么选择我们",
+                aboutTitle: "务实服务，沟通清楚",
+                aboutLead: "我们重视有条理的施工、容易理解的说明，以及针对客户实际问题的服务。",
+                aboutCard1Title: "BM + EN + CN",
+                aboutCard1Text: "可使用马来文、英文和中文沟通。",
+                aboutCard2Title: "快速回复",
+                aboutCard2Text: "通过 WhatsApp 和直接通话更快回应您的询问。",
+                aboutCard3Title: "施工整洁",
+                aboutCard3Text: "安装与保养工作整齐有序。",
+                aboutCard4Title: "本地服务范围",
+                aboutCard4Text: "位于 Bandar Sri Permaisuri，Kuala Lumpur。",
+                messageBadge: "BM / EN / CN",
+                messageTitle: "信息简短，预约更快",
+                messageLead: "您可以通过 WhatsApp 简单说明地点、问题情况或安装需求。信息越清楚，我们回复越快。",
+                messageExampleLabel: "示例信息：",
+                messageExampleText: "\"你好，我在 Sri Permaisuri。冷气不冷，而且声音很大。可以过来检查吗？\"",
+                messagePrimaryCta: "打开 WhatsApp",
+                messageSecondaryCta: "查看联系资料",
+                contactTitle: "联系 Syed Aircond Solutions",
+                contactLead: "无论是保养、安装、维修还是电线工程，都可以直接通过电话或 WhatsApp 联系我们。",
+                phoneLabel: "电话",
+                footerText: "&copy; 2026 Syed Aircond Solutions。提供冷气保养、安装、维修和电线工程服务。",
+                floatingWhatsappAria: "通过 WhatsApp 联系"
+            }
+        };
+
+        const applyLanguage = (lang) => {
+            const selectedLang = translations[lang] ? lang : "en";
+            document.body.dataset.lang = selectedLang;
+            document.documentElement.lang = selectedLang === "bm" ? "ms" : selectedLang === "cn" ? "zh" : "en";
+
+            document.querySelectorAll("[data-i18n]").forEach((element) => {
+                const key = element.dataset.i18n;
+                const value = translations[selectedLang][key];
+
+                if (typeof value === "string") {
+                    element.innerHTML = value;
+                }
+            });
+
+            document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+                const key = element.dataset.i18nAriaLabel;
+                const value = translations[selectedLang][key];
+
+                if (typeof value === "string") {
+                    element.setAttribute("aria-label", value);
+                }
+            });
+
+            document.querySelectorAll("[data-lang-choice]").forEach((button) => {
+                button.classList.toggle("active", button.dataset.langChoice === selectedLang);
+            });
+        };
+
+        document.querySelectorAll("[data-lang-choice]").forEach((button) => {
+            button.addEventListener("click", () => {
+                applyLanguage(button.dataset.langChoice);
+            });
+        });
+
+        applyLanguage("en");
+    </script>
 </body>
 </html>
