@@ -25,10 +25,34 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://syedaircond.my/bm/aircond-service/</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://syedaircond.my/cn/aircond-service/</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://syedaircond.my/aircond-installation/</loc>
         <lastmod>2026-05-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://syedaircond.my/bm/aircond-installation/</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://syedaircond.my/cn/aircond-installation/</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://syedaircond.my/aircond-repair/</loc>
@@ -37,9 +61,33 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://syedaircond.my/bm/aircond-repair/</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://syedaircond.my/cn/aircond-repair/</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://syedaircond.my/aircond-wiring/</loc>
         <lastmod>2026-05-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://syedaircond.my/bm/aircond-wiring/</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://syedaircond.my/cn/aircond-wiring/</loc>
+        <lastmod>2026-05-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
     </url>
 </urlset>
