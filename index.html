@@ -100,6 +100,22 @@
             font-size: 1.5rem;
         }
 
+        .gallery-card {
+            overflow: hidden;
+            background: var(--brand-white);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-card .card-body {
+            padding: 1.5rem;
+        }
+
         .section-wrap {
             padding: 5rem 0;
         }
@@ -304,6 +320,36 @@
             </div>
         </section>
 
+        <section class="section-wrap pt-0" id="gallery">
+            <div class="container">
+                <div class="text-center mx-auto mb-5" style="max-width: 760px;">
+                    <span class="section-badge mb-3"><i class="bi bi-camera"></i> <span data-i18n="galleryBadge">Recent Work</span></span>
+                    <h2 class="display-6 fw-bold" data-i18n="galleryTitle">See our service work on site</h2>
+                    <p class="lead" data-i18n="galleryLead">Actual job photos showing indoor cleaning and outdoor unit checking during service.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <article class="gallery-card service-card card h-100">
+                            <img src="assets/images/gallery/aircond-indoor-cleaning.jpg" alt="Technician cleaning an indoor aircond unit" loading="lazy">
+                            <div class="card-body">
+                                <h3 class="h4 mb-2" data-i18n="galleryCard1Title">Indoor unit deep cleaning</h3>
+                                <p class="mb-0 text-secondary" data-i18n="galleryCard1Text">Careful indoor coil cleaning with proper cover protection to keep the area tidy.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6">
+                        <article class="gallery-card service-card card h-100">
+                            <img src="assets/images/gallery/aircond-outdoor-unit-check.jpg" alt="Technician checking an outdoor aircond unit" loading="lazy">
+                            <div class="card-body">
+                                <h3 class="h4 mb-2" data-i18n="galleryCard2Title">Outdoor unit inspection</h3>
+                                <p class="mb-0 text-secondary" data-i18n="galleryCard2Text">Outdoor condenser checking and service work for stable cooling performance.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section-wrap pt-0" id="about">
             <div class="container">
                 <div class="row g-4 align-items-stretch">
@@ -435,6 +481,13 @@
                 service3Text: "Baiki masalah aircond tidak sejuk, bocor, bising, atau gangguan operasi lain.",
                 service4Title: "Wiring",
                 service4Text: "Kerja wiring berkaitan pemasangan dan pembaikan untuk setup yang lebih selamat.",
+                galleryBadge: "Kerja Terkini",
+                galleryTitle: "Lihat kerja servis kami di lokasi",
+                galleryLead: "Gambar kerja sebenar yang menunjukkan cucian unit dalaman dan pemeriksaan unit luar semasa servis.",
+                galleryCard1Title: "Cucian mendalam unit dalaman",
+                galleryCard1Text: "Cucian coil unit dalaman dengan perlindungan cover yang kemas supaya kawasan kekal bersih.",
+                galleryCard2Title: "Pemeriksaan unit luar",
+                galleryCard2Text: "Pemeriksaan condenser luar dan kerja servis untuk prestasi penyejukan yang lebih stabil.",
                 aboutBadge: "Kenapa Pilih Kami",
                 aboutTitle: "Servis praktikal, komunikasi yang jelas",
                 aboutLead: "Kami fokus pada kerja yang teratur, penerangan yang mudah difahami, dan servis yang sesuai dengan masalah sebenar pelanggan.",
@@ -489,6 +542,13 @@
                 service3Text: "Repair aircond issues such as poor cooling, leaks, noise, or other operating problems.",
                 service4Title: "Wiring",
                 service4Text: "Wiring work related to installation and repair for a safer setup.",
+                galleryBadge: "Recent Work",
+                galleryTitle: "See our service work on site",
+                galleryLead: "Actual job photos showing indoor cleaning and outdoor unit checking during service.",
+                galleryCard1Title: "Indoor unit deep cleaning",
+                galleryCard1Text: "Careful indoor coil cleaning with proper cover protection to keep the area tidy.",
+                galleryCard2Title: "Outdoor unit inspection",
+                galleryCard2Text: "Outdoor condenser checking and service work for stable cooling performance.",
                 aboutBadge: "Why Choose Us",
                 aboutTitle: "Practical service, clear communication",
                 aboutLead: "We focus on organized work, easy-to-understand explanations, and service matched to the customer's actual problem.",
@@ -543,6 +603,13 @@
                 service3Text: "维修不冷、漏水、噪音大或其他运作问题。",
                 service4Title: "电线工程",
                 service4Text: "提供与安装和维修相关的电线工程，确保系统更安全。",
+                galleryBadge: "近期工作",
+                galleryTitle: "查看我们的现场服务工作",
+                galleryLead: "真实工作照片，展示室内机清洗和室外机检查服务过程。",
+                galleryCard1Title: "室内机深度清洗",
+                galleryCard1Text: "仔细清洗室内机冷排，并使用保护罩保持现场整洁。",
+                galleryCard2Title: "室外机检查",
+                galleryCard2Text: "检查室外冷凝机并进行服务工作，确保制冷表现更稳定。",
                 aboutBadge: "为什么选择我们",
                 aboutTitle: "务实服务，沟通清楚",
                 aboutLead: "我们重视有条理的施工、容易理解的说明，以及针对客户实际问题的服务。",
