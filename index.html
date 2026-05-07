@@ -8,6 +8,10 @@
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="format-detection" content="telephone=yes">
     <link rel="canonical" href="https://syedaircond.my/">
+    <link rel="alternate" hreflang="en" href="https://syedaircond.my/">
+    <link rel="alternate" hreflang="ms" href="https://syedaircond.my/bm/">
+    <link rel="alternate" hreflang="zh" href="https://syedaircond.my/cn/">
+    <link rel="alternate" hreflang="x-default" href="https://syedaircond.my/">
     <meta property="og:site_name" content="Syed Aircond Solutions">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Aircond Service Kuala Lumpur | Syed Aircond Solutions">
@@ -306,9 +310,9 @@
                     <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="navContact">Contact</a></li>
                     <li class="nav-item">
                         <div class="language-switch">
-                            <button class="btn btn-sm btn-light active" type="button" data-lang-choice="bm">BM</button>
-                            <button class="btn btn-sm btn-light" type="button" data-lang-choice="en">EN</button>
-                            <button class="btn btn-sm btn-light" type="button" data-lang-choice="cn">CN</button>
+                            <a class="btn btn-sm btn-light" href="/bm/" lang="ms" hreflang="ms">BM</a>
+                            <a class="btn btn-sm btn-light active" href="/" lang="en" hreflang="en" aria-current="page">EN</a>
+                            <a class="btn btn-sm btn-light" href="/cn/" lang="zh" hreflang="zh">CN</a>
                         </div>
                     </li>
                     <li class="nav-item"><a class="btn btn-primary rounded-pill px-4" href="https://wa.me/60172330725" target="_blank" rel="noopener noreferrer" data-i18n="navWhatsApp">WhatsApp</a></li>
@@ -497,6 +501,36 @@
                                 <a class="btn btn-primary rounded-pill px-4" href="https://wa.me/60172330725" target="_blank" rel="noopener noreferrer" data-i18n="messagePrimaryCta">Open WhatsApp</a>
                                 <a class="btn btn-outline-primary rounded-pill px-4" href="#contact" data-i18n="messageSecondaryCta">View Contact Info</a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-wrap pt-0" id="areas">
+            <div class="container">
+                <div class="text-center mx-auto mb-5" style="max-width: 760px;">
+                    <span class="section-badge mb-3"><i class="bi bi-geo-alt"></i> <span>Service Area</span></span>
+                    <h2 class="display-6 fw-bold">Aircond service coverage in Kuala Lumpur</h2>
+                    <p class="lead">We are based in Bandar Sri Permaisuri and support nearby homes, offices, shops, and small business premises across Kuala Lumpur.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="service-card card h-100 p-4">
+                            <h3 class="h4">Core coverage</h3>
+                            <p class="mb-3 text-secondary">Bandar Sri Permaisuri is our base location, making it easier to respond to enquiries around Kuala Lumpur.</p>
+                            <ul class="feature-list list-unstyled mb-0">
+                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Bandar Sri Permaisuri</li>
+                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Kuala Lumpur homes</li>
+                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Offices and shop lots</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="service-card card h-100 p-4">
+                            <h3 class="h4">Best way to enquire</h3>
+                            <p class="mb-3 text-secondary">For faster scheduling, send your location, aircond problem, and preferred service on WhatsApp.</p>
+                            <p class="mb-0 text-secondary">This helps us confirm whether you need regular servicing, repair, installation, or wiring support before arranging a visit.</p>
                         </div>
                     </div>
                 </div>
@@ -833,12 +867,6 @@
                 button.classList.toggle("active", button.dataset.langChoice === selectedLang);
             });
         };
-
-        document.querySelectorAll("[data-lang-choice]").forEach((button) => {
-            button.addEventListener("click", () => {
-                applyLanguage(button.dataset.langChoice);
-            });
-        });
 
         applyLanguage("en");
     </script>
