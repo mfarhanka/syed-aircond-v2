@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Collapse duplicate default-document URLs onto the canonical directory URLs.
+RewriteRule ^index\.html$ / [R=301,L,NC]
+RewriteRule ^(.+)/index\.html$ /$1/ [R=301,L,NC]
